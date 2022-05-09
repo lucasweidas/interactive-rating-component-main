@@ -27,6 +27,7 @@ body {
   align-items: center;
   font-family: var(--ff-default);
   background-color: var(--clr-very-dark-blue);
+  padding-inline: 1.5rem;
 }
 
 p {
@@ -36,20 +37,20 @@ p {
 /* Cards */
 .card {
   width: min(100%, 26rem);
-  height: 26.25rem;
+  min-height: 26.25rem;
   /* background-color: var(--clr-dark-blue); */
   /* background-color: rgb(60, 60, 128); */
   background-image: radial-gradient(at top, 
   var(--clr-dark-blue),
   hsl(215, 27%, 12%));
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: clamp(1rem, 3.5vw, 1.75rem);
+  padding: clamp(1.5rem, 5vw, 2rem);
 }
 
 .card__title {
   color: var(--clr-white);
-  font-size: 1.75rem;
-  margin-block: 2.063rem 0.875rem;
+  font-size: clamp(1.375rem, 5vw, 1.75rem);
+  margin-block: clamp(1.375rem, 5vw, 2.063rem) clamp(0.625rem, 5vw, 0.875rem);
 }
 
 .card__message {
@@ -59,8 +60,8 @@ p {
 
 /* Rating Card */
 .rating__icon-container {
-  width: 3rem;
-  height: 3rem;
+  width: clamp(2.5rem, 7.5vw, 3rem);
+  height: clamp(2.5rem, 7.5vw, 3rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,8 +76,8 @@ p {
 }
 
 .rating__label {
-  width: 2.625rem;
-  height: 2.625rem;
+  width: clamp(2.625rem, 10vw, 3.25rem);
+  height: clamp(2.625rem, 10vw, 3.25rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,16 +148,4 @@ p {
 
 .thanks .card__message {
   text-align: center;
-}
-
-@media (min-width: 475px) {
-  .card {
-    border-radius: 1.75rem;
-  }
-
-  .rating__label {
-    width: 3.25rem;
-    height: 3.25rem;
-    padding-block-start: 0.25rem;
-  }
 }
